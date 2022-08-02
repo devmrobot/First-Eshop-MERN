@@ -5,11 +5,11 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Badge from "@mui/material/Badge";
 
 const Container = styled.div`
-  height: 60px;
+  height: 95px;
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,7 +72,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>MAKE ME FASHION.</Logo>  
+          <Logo>WELCOME TO THE JUNGLE.</Logo>  
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
