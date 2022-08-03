@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 
 const Container = styled.div`
   height: 40vh;
@@ -15,6 +15,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 70px;
   margin-bottom: 20px;
+  margin-top: 0;
 `;
 
 const Description = styled.div`
@@ -27,25 +28,25 @@ const InputContainer = styled.div`
   height: 60px;
   background-color: #fff;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   border: 1px solid lightgray;
-`; 
+`;
 
 const Input = styled.input`
-    border: none;
-    flex:8;
-    padding: 10px 25px;
-    font-size: 23px;
+  border: none;
+  flex: 8;
+  padding: 10px 25px;
+  font-size: 23px;
 `;
 
 const Button = styled.button`
-    flex:1;
-    cursor: pointer;
-    background-color:#008080;
-    border:none;
+  flex: 1;
+  cursor: pointer;
+  background-color: #008080;
+  border: none;
 `;
 
-const Newsletter = () => { 
+const Newsletter = () => {
   return (
     <Container>
       <Title>Newsletter</Title>
@@ -53,7 +54,7 @@ const Newsletter = () => {
       <InputContainer>
         <Input placeholder="...Enter your email" />
         <Button>
-            <SendIcon style={{fontSize:35, color:"#fff"}}/>
+          <SendIcon style={{ fontSize: 35, color: "#fff" }} />
         </Button>
       </InputContainer>
     </Container>
