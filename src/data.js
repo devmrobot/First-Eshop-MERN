@@ -91,3 +91,39 @@ export const popularProducts = [
     img: popcatEight,
   },
 ];
+
+
+export const useFullLinks = [
+  {
+    id: 1,
+    desc: "Cart",
+  },
+  {
+    id: 2,
+    desc: "Plants",
+  },
+  {
+    id: 3,
+    desc: "Cactus",
+  },
+  {
+    id: 4,
+    desc: "Succulent",
+  },
+  {
+    id: 5,
+    desc: "My Account",
+  },
+  {
+    id: 6,
+    desc: "Order Tracking",
+  },
+  {
+    id: 7,
+    desc: "WishList",
+  },
+  {
+    id: 8,
+    desc: "Terms",
+  },
+];
