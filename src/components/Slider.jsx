@@ -6,9 +6,10 @@ import { sliderItems } from "../data";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   position: relative;
+  overflow:hidden;
 `;
 
 const Arrow = styled.div`
@@ -22,8 +23,8 @@ const Arrow = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
+  left: ${(props) => props.direction === "left" && "40px"};
+  right: ${(props) => props.direction === "right" && "40px"};
   margin: auto;
   cursor: pointer;
   opacity: 0.7;
@@ -39,9 +40,11 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #${(props) => props.bg};
 `;
 
@@ -51,8 +54,9 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 `;
 
 const InfoContainer = styled.div`
@@ -60,7 +64,10 @@ const InfoContainer = styled.div`
   position: absolute;
   background-color: white;
   opacity: 0.8;
-  margin-left:90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = styled.h2`
@@ -104,7 +111,7 @@ const Slider = () => {
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
-            <InfoContainer >
+            <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.desc}</Description>
               <Button>Shop Now</Button>
@@ -119,4 +126,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Slider; 

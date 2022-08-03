@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+
+// icons from Mui
 import { Search } from "@mui/icons-material";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Badge from "@mui/material/Badge";
 
-const Container = styled.div`
-  height: 95px;
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 10px 50px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
