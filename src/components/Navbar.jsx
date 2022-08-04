@@ -1,25 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive"
 
 // icons from Mui
 import { Search } from "@mui/icons-material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Badge from "@mui/material/Badge";
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div` 
   padding: 10px 50px;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
+  ${mobile({ flexDirection : "column" })}
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styled.div`
@@ -29,7 +34,7 @@ const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 7px;
 `;
-
+ 
 const Input = styled.input`
   border: none;
   flex: 8;
@@ -49,6 +54,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  ${mobile({ fontSize : "26px" })}
 `;
 
 const Right = styled.div`
@@ -71,7 +77,7 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-              <Input />
+              <Input placeholder="Search"/>
             <Search style={{ color: "gray, fontSize:16px" }} />
           </SearchContainer>
         </Left>
