@@ -9,12 +9,14 @@ import {
 import React from "react";
 import styled from "styled-components";
 import { useFullLinks } from "../data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 5rem;
   padding: 20px;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -84,8 +86,8 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-    width: 300px;
-    margin-top: 20px;
+  width: 300px;
+  margin-top: 20px;
 `;
 
 const Footer = () => {
@@ -141,4 +143,3 @@ const Footer = () => {
 };
 
 export default Footer;
- 

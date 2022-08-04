@@ -1,12 +1,10 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://images.pexels.com/photos/460621/pexels-photo-460621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
       center;
   background-size: cover;
@@ -19,6 +17,7 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 30px;
   background-color: white;
+  ${mobile({ width: "70%" })}
 `;
 
 const Title = styled.h1`

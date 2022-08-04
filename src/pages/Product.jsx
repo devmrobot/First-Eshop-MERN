@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Add, Remove } from "@mui/icons-material";
 import popcatSeven from "../assets/popcat-seven.jpg";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   padding: 50px;
   display: flex;
   gap: 5rem;
+  ${mobile({ flexDirection: "column", padding: "20px", gap: "1rem" })}
 `;
 
 const InfoContainer = styled.div`
@@ -27,6 +29,7 @@ const Image = styled.img`
   height: 70vh;
   width: 100%;
   object-fit: cover;
+  ${mobile({ height: "50vh" })}
 `;
 
 const Title = styled.h1`
@@ -49,6 +52,7 @@ const FilterContainer = styled.div`
   margin: 40px 0px;
   justify-content: space-between;
   width: 50%;
+  ${mobile({ flexDirection: "column", gap: "2rem", width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -85,6 +89,7 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column", gap: "2rem" })}
 `;
 
 const AmountContainer = styled.div`
