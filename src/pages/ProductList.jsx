@@ -6,6 +6,9 @@ import Products from "../components/Products.jsx";
 import Newsletter from "../components/Newsletter.jsx";
 import Footer from "../components/Footer.jsx";
 import { mobile } from "../responsive.js";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { CatchingPokemonTwoTone } from "@mui/icons-material";
 
 const Container = styled.div``;
 
@@ -13,7 +16,7 @@ const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 25px;
-  ${mobile({ flexDirection: "column", padding:"0px 0px 40px 0px" })}
+  ${mobile({ flexDirection: "column", padding: "0px 0px 40px 0px" })}
 `;
 
 const Title = styled.h1`
@@ -23,7 +26,7 @@ const Title = styled.h1`
 
 const Filter = styled.div`
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 1rem;
   ${mobile({ flexDirection: "column" })}
 `;
@@ -47,6 +50,28 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("Newest");
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
+
+  const handleSort = (e) => {
+    setSort(e.target.value);
+  };
+
+  // console.log("--> Location", location);
+  // console.log("--> cat", cat);
+  // console.log("--> location", location);
+  // console.log("--> sort", sort);
+
   return (
     <Container>
       <Announcement />
@@ -55,10 +80,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select>
-            <Option disabled selected>
-              Type
-            </Option>
+          <Select name="type" onChange={handleFilters}>
+            <Option disabled>Type</Option>
             <Option>Interior</Option>
             <Option>Exterior</Option>
             <Option>Plant for Home</Option>
@@ -66,10 +89,8 @@ const ProductList = () => {
             <Option>Succulent</Option>
             <Option>Cactus</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select name="size" onChange={handleFilters}>
+            <Option disabled>Size</Option>
             <Option>Small plant</Option>
             <Option>Medium plant</Option>
             <Option>Large plant</Option>
@@ -78,14 +99,14 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
-          <Select>
-            <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+          <Select onChange={handleSort}>
+            <Option value="newest">Newest</Option>
+            <Option value="asc">Price (asc)</Option>
+            <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products cat={cat} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>

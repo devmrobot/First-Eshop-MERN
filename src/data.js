@@ -42,18 +42,21 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: categoryOne,
+    img: categoryOne, 
     title: "PLANTS",
+    cat:"plants"
   },
   {
     id: 2,
     img: categoryTwo,
     title: "CACTUS",
+    cat:"cactus"
   },
   {
     id: 3,
     img: categoryThree,
     title: "SUCCULENT",
+    cat:"succulent"
   },
 ];
 
