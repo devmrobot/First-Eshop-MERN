@@ -8,7 +8,6 @@ import Footer from "../components/Footer.jsx";
 import { mobile } from "../responsive.js";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { CatchingPokemonTwoTone } from "@mui/icons-material";
 
 const Container = styled.div``;
 
@@ -67,34 +66,29 @@ const ProductList = () => {
     setSort(e.target.value);
   };
 
-  // console.log("--> Location", location);
-  // console.log("--> cat", cat);
-  // console.log("--> location", location);
-  // console.log("--> sort", sort);
+  console.log("--> Location", location);
+  console.log("--> cat", cat);
+  console.log("--> location", location);
+  console.log("--> sort", sort);
 
   return (
     <Container>
       <Announcement />
       <Navbar />
-      <Title>PLANTS</Title>
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select name="type" onChange={handleFilters}>
-            <Option disabled>Type</Option>
+          <Select name="color" onChange={handleFilters} defaultValue={"default"}>
+            <Option value={"default"} disabled>Type</Option>
             <Option>Interior</Option>
             <Option>Exterior</Option>
-            <Option>Plant for Home</Option>
-            <Option>Plant for Office</Option>
-            <Option>Succulent</Option>
-            <Option>Cactus</Option>
           </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>Small plant</Option>
-            <Option>Medium plant</Option>
-            <Option>Large plant</Option>
-            <Option>Extra-large plant</Option>
+          <Select name="size" onChange={handleFilters} defaultValue={"default"}>
+            <Option value={"default"} disabled>Size</Option>
+            <Option>Small</Option>
+            <Option>Medium</Option>
+            <Option>Large</Option>
           </Select>
         </Filter>
         <Filter>

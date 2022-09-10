@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // icons from Mui
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -31,7 +32,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
-  &:hover ${Info}{
+  &:hover ${Info} {
     opacity: 1;
   }
 `;
@@ -77,7 +78,9 @@ const Product = ({ item }) => {
           <ShoppingBagIcon />
         </Icon>
         <Icon>
+          <Link to={`/product/${item._id}`}>
           <Search />
+          </Link>
         </Icon>
         <Icon>
           <FavoriteBorder />

@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-const Categories = () => {
+const Categories = () => { 
   return (
     <Container>
       {categories.map((item) => (
