@@ -79,14 +79,13 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select name="type" onChange={handleFilters}>
-            <Option disabled>Type</Option>
-            <Option>plants</Option>
-            <Option>succulent</Option>
-            <Option>cactus</Option>
+          <Select name="color" onChange={handleFilters} defaultValue={"default"}>
+            <Option value={"default"} disabled>Type</Option>
+            <Option>Interior</Option>
+            <Option>Exterior</Option>
           </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
+          <Select name="size" onChange={handleFilters} defaultValue={"default"}>
+            <Option value={"default"} disabled>Size</Option>
             <Option>Small</Option>
             <Option>Medium</Option>
             <Option>Large</Option>
